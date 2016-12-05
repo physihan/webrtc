@@ -60,11 +60,15 @@ constraints
 constraints 参数是一个包含了video 和 audio两个成员的MediaStreamConstraints 对象，用于说明请求的媒体类型。必须至少一个类型或者两个同时可以被指定。如果浏览器无法找到指定的媒体类型或者无法满足相对应的参数要求，那么返回的Promise对象就会处于rejected［失败］状态，NotFoundError作为rejected［失败］回调的参数。 
 
 以下同时请求不带任何参数的音频和视频：
->```
+
+
+>```javascript
 >{ audio: true, video: true }
 >```
+
 当由于隐私保护的原因，无法访问用户的摄像头和麦克风信息时，应用可以使用额外的constraints参数请求它所需要或者想要的摄像头和麦克风能力。下面演示了应用想要使用1280x720的摄像头分辨率：
->```
+
+>```javascript
 >{
 >  audio: true,
 >  video: { width: 1280, height: 720 }
