@@ -62,19 +62,19 @@ constraints 参数是一个包含了video 和 audio两个成员的MediaStreamCon
 以下同时请求不带任何参数的音频和视频：
 
 
->```javascript
->{ audio: true, video: true }
->```
+```javascript
+{ audio: true, video: true }
+```
 
 当由于隐私保护的原因，无法访问用户的摄像头和麦克风信息时，应用可以使用额外的constraints参数请求它所需要或者想要的摄像头和麦克风能力。下面演示了应用想要使用1280x720的摄像头分辨率：
 
 
->```javascript
->{
->  audio: true,
->  video: { width: 1280, height: 720 }
->}
->```
+```javascript
+{
+  audio: true,
+  video: { width: 1280, height: 720 }
+}
+```
 强制要求获取特定的尺寸时，可以使用关键字min, max, 或者 exact(就是 min == max). 以下参数表示要求获取最低为1280x720的分辨率。
 ```javascript
 {
@@ -113,15 +113,15 @@ constraints 参数是一个包含了video 和 audio两个成员的MediaStreamCon
 ```
 并不是所有的constraints 都是数字。例如, 在移动设备上面，如下的例子表示优先使用前置摄像头（如果有的话）：
 
->`{ audio: true, video: { facingMode: "user" } }`
+`{ audio: true, video: { facingMode: "user" } }`
 强制使用后置摄像头，请用：
 
->`{ audio: true, video: { facingMode: { exact: "environment" } } }`
+`{ audio: true, video: { facingMode: { exact: "environment" } } }`
 
 ### 还可以控制帧率
 在某些情况下，比如WebRTC上使用受限带宽传输时，低帧率可能更适宜。
 
->`var constraints = { video: { frameRate: { ideal: 10, max: 15 } } };`
+`var constraints = { video: { frameRate: { ideal: 10, max: 15 } } };`
 对于移动设备可以控制选择前置或者后置摄像头
 
 ```javascript
