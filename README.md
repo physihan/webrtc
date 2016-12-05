@@ -113,15 +113,19 @@ constraints 参数是一个包含了video 和 audio两个成员的MediaStreamCon
 ```
 并不是所有的constraints 都是数字。例如, 在移动设备上面，如下的例子表示优先使用前置摄像头（如果有的话）：
 
-`{ audio: true, video: { facingMode: "user" } }`
+```
+{ audio: true, video: { facingMode: "user" } }
+```
+
 强制使用后置摄像头，请用：
 
 `{ audio: true, video: { facingMode: { exact: "environment" } } }`
 
 ### 还可以控制帧率
 在某些情况下，比如WebRTC上使用受限带宽传输时，低帧率可能更适宜。
-
-`var constraints = { video: { frameRate: { ideal: 10, max: 15 } } };`
+```javascript
+var constraints = { video: { frameRate: { ideal: 10, max: 15 } } };
+```
 对于移动设备可以控制选择前置或者后置摄像头
 
 ```javascript
