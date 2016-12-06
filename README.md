@@ -7,6 +7,10 @@ web rtc实现实时视频
 - [ ] 将视频存储为本地文件
 - [ ] 本地实现双向视频
 
+## 实现方案
+
+
+
 ## 关键技术
 webrtc使用了navigator对象，navigator对象是window对象的一个属性
 ### Navigator 对象属性

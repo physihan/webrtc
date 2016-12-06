@@ -5,7 +5,9 @@ navigator.getUserMedia = navigator.getUserMedia ||
 
 var constraints = {
   audio: false,
-  video: true
+  video:{ width: { min: 1024, ideal: 280, max: 1920 },
+    height: { min: 776, ideal: 20, max: 1080 }
+  }
 };
 
 var video = document.querySelector('video');
@@ -17,6 +19,7 @@ function successCallback(stream) {
   } else {
     video.src = stream;
   }
+  console.log(window.URL)
 }
 
 function errorCallback(error) {
